@@ -1,0 +1,19 @@
+configuration:
+  language:
+    name: "Lingua sul deck"
+    description: "Giorni, date e testi predefiniti dei tasti Track Time. auto usa la lingua di Home Assistant."
+  auto_brightness:
+    name: "Abbassa quando la luce è spenta"
+    description: "Riduce la luminosità finché l'entità qui sotto è spenta, ad es. di notte. Il cursore della luminosità nel configuratore è il valore diurno."
+  brightness_light_entity:
+    name: "Entità luce per l'attenuazione"
+    description: "Un'entità spenta quando la stanza è buia, ad es. un gruppo di luci o un sensore binario."
+  brightness_min:
+    name: "Luminosità notturna (%)"
+    description: "Luminosità finché questa entità è spenta."
+  track_time_url:
+    name: "Indirizzo di Track Time"
+    description: "Facoltativo. Lascia vuoto per trovare l'app Track Time automaticamente. Altrimenti ad es. http://192.0.2.10:7979."
+  track_time_api_key:
+    name: "Chiave API di Track Time"
+    description: "Serve solo con un indirizzo sulla porta 7979 quando Track Time ha una chiave API."

@@ -1,0 +1,51 @@
+# Hit the Deck key layout. Easiest to edit in the configurator (sidebar → Hit the Deck);
+# changes reach the deck without a restart.
+#
+# Keys are numbered row by row: on a Stream Deck Neo 0-3 is the top row, 4-7 the bottom row.
+# kind: entity | track_time_toggle | track_time_stop | page | empty
+brightness: 80
+
+pages:
+  - name: "1"
+    buttons:
+      - kind: empty
+      - kind: empty
+      - kind: empty
+      - kind: track_time_toggle   # start, pause, resume; shows the time worked today
+      - kind: empty
+      - kind: empty
+      - kind: empty
+      - kind: track_time_stop
+
+# Examples for entity keys:
+#  - kind: entity
+#    entity_id: light.desk
+#    tap_action: light.toggle
+#    layout: full                # full | standard | gauge | meter
+#  - kind: entity
+#    entity_id: sensor.outdoor_temperature
+#    layout: gauge
+#    gauge_min: -10
+#    gauge_max: 40
+
+# The info bar of the Stream Deck Neo (248 × 58 pixels).
+# Section types: clock | date | entity | text; weight = relative width; size = s | m | l | xl
+screen:
+  update_interval: 1
+  background_color: "#000000"
+  dividers: false
+  sections:
+    - type: clock
+      format: "%H:%M"
+      size: xl
+      weight: 3
+    - type: date
+      weekday: true
+      weekday_style: long
+      size: l
+      weight: 2
+
+# The two touch points left and right of the info bar (Stream Deck Neo):
+# either `page: prev|next` or `tap_action` with `entity_id`.
+touch_left: {}
+touch_right: {}

@@ -1,0 +1,19 @@
+configuration:
+  language:
+    name: "Idioma en el deck"
+    description: "Días, fechas y textos predeterminados de las teclas de Track Time. auto usa el idioma de Home Assistant."
+  auto_brightness:
+    name: "Atenuar con la luz apagada"
+    description: "Baja el brillo mientras la entidad de abajo está apagada, p. ej. de noche. El control de brillo del configurador es el valor de día."
+  brightness_light_entity:
+    name: "Entidad de luz para atenuar"
+    description: "Una entidad que está apagada cuando la habitación está a oscuras, p. ej. un grupo de luces o un sensor binario."
+  brightness_min:
+    name: "Brillo nocturno (%)"
+    description: "Brillo mientras esa entidad está apagada."
+  track_time_url:
+    name: "Dirección de Track Time"
+    description: "Opcional. Déjalo vacío para encontrar la app Track Time automáticamente. Si no, p. ej. http://192.0.2.10:7979."
+  track_time_api_key:
+    name: "Clave API de Track Time"
+    description: "Solo hace falta con una dirección en el puerto 7979 cuando Track Time tiene una clave API."

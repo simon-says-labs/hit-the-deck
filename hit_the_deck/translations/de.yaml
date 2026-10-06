@@ -1,0 +1,19 @@
+configuration:
+  language:
+    name: "Sprache auf dem Deck"
+    description: "Wochentage, Datum und die Standardtexte der Track-Time-Tasten. auto übernimmt die Sprache von Home Assistant."
+  auto_brightness:
+    name: "Dimmen, wenn das Licht aus ist"
+    description: "Senkt die Helligkeit, solange die Entity unten aus ist, z. B. nachts. Der Helligkeitsregler im Konfigurator ist der Tageswert."
+  brightness_light_entity:
+    name: "Licht-Entity zum Dimmen"
+    description: "Eine Entity, die aus ist, wenn es im Raum dunkel ist, z. B. eine Lichtgruppe oder ein Binärsensor."
+  brightness_min:
+    name: "Nachthelligkeit (%)"
+    description: "Helligkeit, solange diese Entity aus ist."
+  track_time_url:
+    name: "Track-Time-Adresse"
+    description: "Optional. Leer lassen, dann wird die Track-Time-App automatisch gefunden. Sonst z. B. http://192.0.2.10:7979."
+  track_time_api_key:
+    name: "Track-Time-API-Schlüssel"
+    description: "Nur nötig mit einer Adresse auf Port 7979, wenn Track Time einen API-Schlüssel hat."

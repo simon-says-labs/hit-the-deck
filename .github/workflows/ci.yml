@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install libraries (no Stream Deck needed)
+        run: pip install pillow pyyaml aiohttp websockets keyring
+      - name: Tests (runtime, drawing, Track Time, configurator, assistant, texts, options)
+        run: python -m unittest discover -s tests -v
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build the app image (amd64)
+        run: docker build -t hit-the-deck:ci hit_the_deck
+      - name: Stream Deck library and hidapi load
+        run: >-
+          docker run --rm --entrypoint python3 hit-the-deck:ci -c
+          "from StreamDeck.DeviceManager import DeviceManager; print(DeviceManager().enumerate())"
+      - name: Without a deck the app stops its container with exit code 3
+        run: |
+          docker run -d --name htd -e SUPERVISOR_TOKEN=ci -e HTD_STARTUP_WAIT_S=10 hit-the-deck:ci
+          sleep 5
+          test "$(docker exec htd curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8099/)" = 403
+          for i in $(seq 1 30); do [ "$(docker inspect -f '{{.State.Status}}' htd)" = exited ] && break; sleep 1; done
+          docker logs htd
+          test "$(docker inspect -f '{{.State.ExitCode}}' htd)" = 3

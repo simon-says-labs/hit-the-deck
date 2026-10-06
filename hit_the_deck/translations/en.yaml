@@ -1,0 +1,19 @@
+configuration:
+  language:
+    name: "Language on the deck"
+    description: "Weekdays, dates and the default texts of the Track Time keys. auto uses the language of Home Assistant."
+  auto_brightness:
+    name: "Dim when the lights are off"
+    description: "Lowers the brightness while the entity below is off, e.g. at night. The brightness slider in the configurator is the day value."
+  brightness_light_entity:
+    name: "Light entity for dimming"
+    description: "An entity that is off when it is dark in the room, e.g. a light group or a binary sensor."
+  brightness_min:
+    name: "Night brightness (%)"
+    description: "Brightness while that entity is off."
+  track_time_url:
+    name: "Track Time address"
+    description: "Optional. Leave empty to find the Track Time app automatically. Otherwise e.g. http://192.0.2.10:7979."
+  track_time_api_key:
+    name: "Track Time API key"
+    description: "Only needed with an address on port 7979 when Track Time has an API key."
