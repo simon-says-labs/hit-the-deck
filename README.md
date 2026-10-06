@@ -2,7 +2,7 @@
 
 # Hit the Deck
 
-<p align="center"><b><a href="#deutsch">🇩🇪 Deutsch</a> · <a href="#english">🇬🇧 English</a></b></p>
+<p align="center"><b><a href="#deutsch">🇩🇪 Deutsch</a> · <a href="#english">🇬🇧 English</a> · <a href="docs/README.fr.md">🇫🇷 Français</a> · <a href="docs/README.it.md">🇮🇹 Italiano</a> · <a href="docs/README.es.md">🇪🇸 Español</a></b></p>
 
 > 🇩🇪 **Simon says: hit the deck!** Ein Stream Deck am Home-Assistant-Rechner wird zur Fernbedienung für Licht,
 > Schalter, Szenen, Ventilatoren und Sensoren. Die Tasten belegst du in einem Konfigurator in der Seitenleiste, der
