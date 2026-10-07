@@ -1,4 +1,4 @@
-<p align="center"><img src="hit_the_deck/logo.png" width="250" alt="Hit the Deck logo"></p>
+<p align="center"><img src="docs/social-preview.png" width="100%" alt="Hit the Deck. Simon says: hit the deck!"></p>
 
 # Hit the Deck
 
